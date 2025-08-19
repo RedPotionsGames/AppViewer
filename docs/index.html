@@ -1,10 +1,171 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Red Potions</title>
     <style>
         body {
-            background: #473AD4;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top left, #0c0b1f, #000);
+            font-family: 'Segoe UI', sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 2s ease-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(200px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(90deg, #ff4d6d, #ff1e56);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow:
+                0 0 10px #ff1e56,
+                0 0 20px #ff1e56,
+                0 0 30px #ff4d6d,
+                0 0 40px #ff4d6d;
+                animation: pulse 3s infinite;
+            margin-bottom: 0px;
+        }
+        
+        p {
+            font-size: 1em;
+            color: #ccc;
+            margin-bottom: 40px;
+            text-shadow: 0 0 5px #ff1e56;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .button {
+            padding: 12px 28px;
+            font-size: 1.2em;
+            color: #fff;
+            text-decoration: none;
+            background: transparent;
+            border: 2px solid #ff1e56;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow:
+                0 0 10px #ff1e56,
+                0 0 20px #ff4d6d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .button::after {
+            content: "→";
+            margin-left: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            position: absolute;
+            right: 20px;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 15px #ff1e56,
+                0 0 30px #ff4d6d,
+                0 0 45px #ff4d6d;
+        }
+
+        .button:hover::after {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .button:active {
+            transform: scale(0.96);
+        }
+
+.nav-header {
+    width: 100%;
+    background: #1b1b1b;
+    box-shadow: 0 2px 10px rgba(255, 30, 86, 0.3);
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1em;
+    color: #ccc;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #ff4d6d;
+    text-shadow: 0 0 5px #ff1e56;
+}
+
+.nav-menu .active a {
+    color: #ff4d6d;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #ff1e56,
+        0 0 10px #ff4d6d;
+    border-bottom: 2px solid #ff1e56;
+}
+
+
+.chained-button {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(145deg, #4b4b4b, #2c2c2c);
+    border: 2px solid #888;
+    border-radius: 10px;
+    box-shadow:
+        0 0 5px #aaa,
+        inset 0 0 5px #333;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
     </style>
-    <body>
-        <h1>Hello</h1>
-    </body>
+</head>
+<header class="nav-header">
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="store">STORE</a></li>
+            <li><a href="library">LIBRARY</a></li>
+            <li><a href="account">ACCOUNT</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <h1>Welcome to Red Potions</h1>
+    <p>The Best Steam Alternative</p>
+    <a class="button" href="store">Continue as Guest</a>
+</body>
 </html>
